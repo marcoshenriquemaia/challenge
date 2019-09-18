@@ -14,3 +14,47 @@
   height: 100%;
   cursor: pointer;
 }
+
+@media (max-width: 1280px) {
+  .navbar {
+    /* background-color: red;  */
+  }
+  .nav-button-item {
+    margin-left: 2%;
+  }
+  .nav-buttons-wrapper {
+    margin-left: 0;
+  }
+  .logo {
+    margin-left: 5px;
+  }
+  .icons-wrapper {
+    width: 7em;
+    margin-right: 3em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    /* background-color: #00ff00; */
+  }
+  .logo {
+    margin-left: 1em;
+  }
+  .nav-buttons-wrapper {
+    margin-left: none;
+    margin-right: 1em;
+  }
+  .nav-button-item {
+    min-width: 50px;
+  }
+}
+
+@media (max-width: 856px) {
+  .nav-button-item {
+    margin-left: 5%;
+  }
+  .material-icons.md-36 {
+    font-size: 25px;
+  }
+}
