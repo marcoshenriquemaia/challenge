@@ -5,7 +5,7 @@ import ProductList from "./product-list/index.js";
 ImportCss({ path: "cart" });
 
 const Cart = {
-  build: () => {
+  build: ({totalPrice}) => {
     const cart = CriarElemento({ tipoElemento: "div", classes: ["cart"] });
     const productList = ProductList.build();
     const totalCartBox = CriarElemento({
@@ -20,7 +20,7 @@ const Cart = {
     const totalPriceCart = CriarElemento({
       tipoElemento: "span",
       classes: ["total-price-cart"],
-      conteudo: "R$ 25.000,00"
+      conteudo: `R$ ${totalPrice}`
     });
     const buttonBuy = CriarElemento({
       tipoElemento: "button",
@@ -37,8 +37,8 @@ const Cart = {
     return cart;
   },
   remove: () => {
-      const cart = document.querySelector('.cart');
-      cart.remove();
+    const cart = document.querySelector(".cart");
+    cart.remove();
   }
 };
 
