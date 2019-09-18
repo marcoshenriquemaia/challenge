@@ -4,13 +4,7 @@ import ImportCss from "../../../../utils/import-css/index.js";
 ImportCss({ path: "cart/product-list/product" });
 
 const Product = {
-  build: ({
-    bestPriceFormated,
-    image,
-    name,
-    productId,
-    quantity
-  }) => {
+  build: ({ bestPriceFormated, image, name, productId, quantity }) => {
     const product = CriarElemento({
       tipoElemento: "li",
       classes: ["product-box"]
@@ -27,7 +21,7 @@ const Product = {
     const productName = CriarElemento({
       tipoElemento: "span",
       classes: ["product-name"],
-      conteudo: nameReduce({name})
+      conteudo: nameReduce({ name })
     });
     const productAmount = CriarElemento({
       tipoElemento: "span",
@@ -53,12 +47,12 @@ const Product = {
 
     product.setAttribute("productId", productId);
 
-    productName.addEventListener("click", () => {
+    productName.addEventListener("mouseleave", () => {
       productName.classList.toggle("product-name-smaller");
-      if (productName.textContent.length > 30) {
-        productName.textContent = nameReduce({name});
-        return;
-      }
+      productName.textContent = nameReduce({ name });
+    });
+    productName.addEventListener("mouseenter", () => {
+      productName.classList.toggle("product-name-smaller");
       productName.textContent = name;
     });
 
