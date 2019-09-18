@@ -1,4 +1,7 @@
 import CriarElemento from "../../shared/criar-elemento/index.js";
+import ImportCss from "../../../utils/import-css/index.js";
+
+ImportCss({path: 'navbar/icons-wrapper'});
 
 const IconsWrapper = {
     build: () =>{
@@ -14,7 +17,8 @@ const IconsWrapper = {
     return iconWrapper;
     },
     remove: () =>{
-
+        const iconWrapper = document.querySelector('.icons-wrapper');
+        iconWrapper.remove();
     }
 }
 

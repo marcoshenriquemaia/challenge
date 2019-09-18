@@ -1,0 +1,12 @@
+.icons-wrapper {
+  width: 9em;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4em;
+  position: relative;
+}
+
+.material-icons.md-36 {
+  font-size: 30px;
+  cursor: pointer;
+}

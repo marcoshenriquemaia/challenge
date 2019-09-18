@@ -1,6 +1,9 @@
 import CriarElemento from "../shared/criar-elemento/index.js";
 import NavButtonsWrapper from "./nav-buttons-wrapper/index.js";
 import IconsWrapper from "./icons-wrapper/index.js";
+import ImportCss from "../../utils/import-css/index.js";
+
+ImportCss({path: 'navbar'});
 
 const Navbar = {
     build: () =>{
