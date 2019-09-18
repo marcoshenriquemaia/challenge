@@ -5,12 +5,11 @@
   background-color: #e6e6e6;
   position: absolute;
   bottom: 0;
-  transform: translateY(calc(100% + 10px));
+  transform: translateY(calc(100% + 12px));
   right: -2em;
   box-sizing: border-box;
   /* overflow-x: hidden; */
 }
-
 
 .button-buy {
   position: absolute;

@@ -13,8 +13,9 @@ const ProductList = {
     });
     const productInformations = store.getState();
     const {cart: { item: item }} = productInformations;
+
+    //esse map cria e já dá appendChild todos os produtos que estão no documento Json, indepentente da quantidade
     item.map(product => {
-      console.log(product);
       const { bestPriceFormated, image, name, productId, quantity } = product;
       const newProduct = Product.build({
         bestPriceFormated,

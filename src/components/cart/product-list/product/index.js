@@ -3,6 +3,8 @@ import ImportCss from "../../../../utils/import-css/index.js";
 
 ImportCss({ path: "cart/product-list/product" });
 
+//Retorna o produto já com todas as informações.
+
 const Product = {
   build: ({ bestPriceFormated, image, name, productId, quantity }) => {
     const product = CriarElemento({
@@ -45,6 +47,8 @@ const Product = {
     amountPriceWrapper.appendChild(productAmount);
     amountPriceWrapper.appendChild(productPrice);
 
+    //essa informação também não está sendo utilizada nesse projeto, mas é uma maneira legal de 
+    //gardarmos uma iformação como o ID. É fácil recupera-la com getAttribute.
     product.setAttribute("productId", productId);
 
     productName.addEventListener("mouseleave", () => {

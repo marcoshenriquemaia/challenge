@@ -1,5 +1,8 @@
 import store from "../store/index.js";
 
+//Eu fiz uma adaptação deste Request através da documentação que deixei lá no commit. 
+//Esse Request le e seta as informações já na Store.
+
 const RequestJson = () => {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {

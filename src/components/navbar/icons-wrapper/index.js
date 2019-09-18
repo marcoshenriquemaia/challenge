@@ -26,6 +26,7 @@ const IconsWrapper = {
       classes: ["material-icons", "md-36", "shopping_cart"],
       conteudo: "shopping_cart"
     });
+    
 
     cartButtom.addEventListener("click", () => {
       const checkCart = document.querySelector(".cart");
@@ -45,6 +46,9 @@ const IconsWrapper = {
     iconWrapper.remove();
   }
 };
+
+//Esta função foi tirada de uma documentação, adaptada e utilizada aqui.
+
 const formatReal = int => {
   let tmp = int + "";
   tmp = tmp.replace(/([0-9]{2})$/g, ",$1");

@@ -1,3 +1,6 @@
+// Este foi um shared criado por mim em um outro projeto (contas). Ele basicamente recebe o que quer criar e 
+// retorna o elemento com todas as funcionalidades
+
 const CriarElemento = ({ tipoElemento, conteudo, classes, cor, alt, tipo, placeholder, id, nameInput, imagem }) => {
     const elemento = document.createElement(tipoElemento);
 

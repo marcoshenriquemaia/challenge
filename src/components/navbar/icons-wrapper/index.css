@@ -9,4 +9,5 @@
 .material-icons.md-36 {
   font-size: 30px;
   cursor: pointer;
+  user-select: none;
 }

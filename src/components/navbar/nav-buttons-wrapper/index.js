@@ -34,12 +34,16 @@ const NavButtonsWrapper = {
       classes: ["nav-button-item", "nav-button-item5"],
       conteudo: 'Lorem ipsum'
     });
+    const iconClose = CriarElemento({tipoElemento: 'i', classes: ['material-icons', 'md-36', 'close-icon'], conteudo: 'close'});
+
+    iconClose.addEventListener("click", () => navButtonsWrapper.classList.toggle("menu-open"));
 
     navButtonsWrapper.appendChild(navButton1);
     navButtonsWrapper.appendChild(navButton2);
     navButtonsWrapper.appendChild(navButton3);
     navButtonsWrapper.appendChild(navButton4);
     navButtonsWrapper.appendChild(navButton5);
+    navButtonsWrapper.appendChild(iconClose);
 
     return navButtonsWrapper;
   },

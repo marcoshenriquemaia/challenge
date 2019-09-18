@@ -11,3 +11,11 @@
   cursor: pointer;
   min-width: 108px;
 }
+
+.menu-icon{
+    display: none;
+}
+
+.nav-button-item:hover{
+    color: #00BC0E;
+}
