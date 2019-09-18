@@ -1,15 +1,13 @@
 import CriarElemento from "../shared/criar-elemento/index.js";
 import ImportCss from "../../utils/import-css/index.js";
+import ProductList from "./product-list/index.js";
 
 ImportCss({ path: "cart" });
 
 const Cart = {
   build: () => {
     const cart = CriarElemento({ tipoElemento: "div", classes: ["cart"] });
-    const productList = CriarElemento({
-      tipoElemento: "ul",
-      classes: ["product-list"]
-    });
+    const productList = ProductList.build();
     const totalCartBox = CriarElemento({
       tipoElemento: "div",
       classes: ["total-cart-box"]

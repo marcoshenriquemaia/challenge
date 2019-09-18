@@ -11,14 +11,6 @@
   /* overflow-x: hidden; */
 }
 
-.product-list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 280px;
-  overflow-y: scroll;
-  background-color: #f0f0f0;
-}
 
 .button-buy {
   position: absolute;

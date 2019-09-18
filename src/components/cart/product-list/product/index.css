@@ -1,0 +1,39 @@
+.product-box {
+    width: 90%;
+    display: flex;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .product-image {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+  }
+  .information-products {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .amount-price-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-amount {
+    font-weight: 600;
+  }
+  
+  .product-price {
+    font-weight: 700;
+    color: #00bc0e;
+  }
+  
+  .total-price-cart {
+    font-weight: 700;
+  }
+  
+  .product-name {
+    font-size: 0.85em;
+  }
