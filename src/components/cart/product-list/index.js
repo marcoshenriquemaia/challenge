@@ -3,26 +3,36 @@ import Product from "./product/index.js";
 import ImportCss from "../../../utils/import-css/index.js";
 import store from "../../../store/index.js";
 
-ImportCss({path: 'cart/product-list'});
+ImportCss({ path: "cart/product-list" });
 
 const ProductList = {
   build: () => {
+    const productList = CriarElemento({
+      tipoElemento: "ul",
+      classes: ["product-list"]
+    });
     const productInformations = store.getState();
-    const { cart: {item: item} } = productInformations;
-    console.log('teste1',productInformations);
-    console.log('teste2',item);
-    console.log('teste3',item[0])
-    const productList = CriarElemento({tipoElemento: 'ul', classes: ['product-list']})
-    const product = Product.build();
+    const {cart: { item: item }} = productInformations;
+    item.map(product => {
+      console.log(product);
+      const { bestPriceFormated, image, name, productId, quantity } = product;
+      const newProduct = Product.build({
+        bestPriceFormated,
+        image,
+        name,
+        productId,
+        quantity
+      });
 
-    productList.appendChild(product);
+      productList.appendChild(newProduct);
+    });
 
     return productList;
   },
   remove: () => {
-    const productList = document.querySelector('.product-list');
+    const productList = document.querySelector(".product-list");
     productList.remove();
-  },
+  }
 };
 
 export default ProductList;

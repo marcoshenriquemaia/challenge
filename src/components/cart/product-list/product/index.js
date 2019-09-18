@@ -1,10 +1,16 @@
 import CriarElemento from "../../../shared/criar-elemento/index.js";
 import ImportCss from "../../../../utils/import-css/index.js";
 
-ImportCss({path: 'cart/product-list/product'})
+ImportCss({ path: "cart/product-list/product" });
 
 const Product = {
-  build: () => {
+  build: ({
+    bestPriceFormated,
+    image,
+    name,
+    productId,
+    quantity
+  }) => {
     const product = CriarElemento({
       tipoElemento: "li",
       classes: ["product-box"]
@@ -12,7 +18,7 @@ const Product = {
     const productImage = CriarElemento({
       tipoElemento: "img",
       classes: ["product-image"],
-      imagem: `./src/assets/images/products/impressora-canon-160-160.jpg`
+      imagem: `./src/assets/${image}`
     });
     const informationProduct = CriarElemento({
       tipoElemento: "div",
@@ -21,12 +27,12 @@ const Product = {
     const productName = CriarElemento({
       tipoElemento: "span",
       classes: ["product-name"],
-      conteudo: "Impressora Multifuncional Canon Tanque..."
+      conteudo: nameReduce({name})
     });
     const productAmount = CriarElemento({
       tipoElemento: "span",
       classes: ["product-amount"],
-      conteudo: "Qtd.: 1"
+      conteudo: `Qtd.: ${quantity}`
     });
     const amountPriceWrapper = CriarElemento({
       tipoElemento: "div",
@@ -35,7 +41,7 @@ const Product = {
     const productPrice = CriarElemento({
       tipoElemento: "span",
       classes: ["product-price"],
-      conteudo: "R$ 7,542,00"
+      conteudo: bestPriceFormated
     });
 
     product.appendChild(productImage);
@@ -45,11 +51,30 @@ const Product = {
     amountPriceWrapper.appendChild(productAmount);
     amountPriceWrapper.appendChild(productPrice);
 
+    product.setAttribute("productId", productId);
+
+    productName.addEventListener("click", () => {
+      productName.classList.toggle("product-name-smaller");
+      if (productName.textContent.length > 30) {
+        productName.textContent = nameReduce({name});
+        return;
+      }
+      productName.textContent = name;
+    });
+
     return product;
   },
-  remove: () =>{
-
+  remove: () => {
+    const product = document.querySelector(".product-box");
+    product.remove();
   }
+};
+
+const nameReduce = ({ name }) => {
+  let newName;
+  if (name.length > 25) newName = name.substring(0, 25) + "...";
+
+  return newName;
 };
 
 export default Product;
